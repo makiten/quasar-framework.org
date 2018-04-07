@@ -1,69 +1,74 @@
-title: Getting Started
+title: Getting Started - Installation
 ---
-There are 3 sections on this documentation website that will get you familiarized with Quasar:
-  * **Guide** - Information about CLI, starter kits, how to get you started working on a project folder
-  * [**API**](/api) - Global Javascript and CSS (framework) API
-  * [**Components**](/components) - List of Quasar components
 
-# First steps
-Quasar CLI allows you to start new projects in no time by generating a starter boilerplate filled with everything that you need. It also does most of the heavy-lifting so you don't have to take care of the redundant tasks. You must install it to generate and manage a Quasar App.
+**If you want to learn what Quasar is and what it can do for you**, read the [Introduction to Quasar](/guide/introduction-to-quasar.html). Otherwise, let's get started and choose how you want to use Quasar:
+ * UMD/Standalone (embed into an existing project through CDN, progressive integration)
+ * Starter Kit handled by Quasar CLI (**recommended**)
 
-``` bash
+Here's a comparison:
+
+| Feature | UMD | Starter Kit |
+| --- | --- | --- |
+| Ability to embed into an existing project | **Yes** | - |
+| Progressive integration of Quasar | **Yes** | - |
+| Ability to use CDN | **Yes** | **Yes*** |
+| Build SPA, PWA, Mobile Apps, Electron Apps | **Yes** | **Yes** |
+| Dynamic RTL support for Quasar components | **Yes** | **Yes** |
+| Generating your own website/app RTL equivalent CSS rules automatically by Quasar | - | **Yes** |
+| Take advantage of Quasar CLI for a stellar developer experience | - | **Yes** |
+| Tree Shaking | - | **Yes** |
+| SFC (Single File Component - for Vue) | - | **Yes** |
+| Advanced configuration through dynamic quasar.conf.js | - | **Yes** |
+
+> If you are upgrading from previous Quasar versions, check [Upgrade Guide](/guide/quasar-upgrade-guide.html).
+
+## UMD / Standalone (uses CDN)
+If you want to embed Quasar into your existing website project, integrating it in a progressive manner, then go for the UMD/Standalone (Unified Module Definition) version. There a helper UMD starter kit which will show you how to get started and what CSS and JS tags to include into your project. It will ask you some questions (what Quasar theme will you be using, what Quasar I18n to include, ...) and it will generate a simple HTML file that will demo on how to use CDN to add Quasar:
+
+```bash
+# make sure you have vue-cli globally installed
+# Node.js >= 8.9.0 is required.
+$ npm install -g vue-cli
+
+# then...
+$ vue init quasarframework/quasar-starter-kit-umd <folder_name>
+```
+
+And you're done. Inspect `index.html` file that was created in the new folder and learn how you can embed Quasar. You may want to repeat the step above to experiment with different setups based on the answers you give out.
+
+Now head on to read about [UMD/Standalone](/guide/embedding-quasar.html).
+
+## Starter Kit (Recommended)
+If you want to be able to build:
+* a SPA (Single Page Application/Website),
+* a PWA (Progressive Web App),
+* a Mobile App (through Cordova),
+* an Electron App,
+...and
+* benefit from a stellar experience provided by Quasar CLI, with HMR (Hot Module Reload)
+* share the same base-code for all those modes
+* benefit from the latest web recommended practices out of the box
+* ability to write ES6 code
+* benefit from Tree Shaking
+* get your code optimized, minified, bundled in the best possible way
+* ability to write SFC (Single File Component - for Vue)
+...then go for the **Starter Kit** way:
+
+First, we install Quasar CLI. Make sure you have Node >=8 and NPM >=5 installed on your machine.
+
+```bash
+# make sure you have vue-cli globally installed
+$ npm install -g vue-cli
+
+# Node.js >= 8.9.0 is required.
 $ npm install -g quasar-cli
 ```
 
-## Create your first App
-
-``` bash
-# create starter boilerplate folder
-$ quasar init <folder name>
-$ cd <folder name>
-
-# npm install deps
-$ npm install
+Then we create a project folder with Quasar CLI:
+```bash
+$ quasar init <folder_name>
 ```
 
-Start a development server of your first App, equipped with hot reload:
+Note that you don't need separate starter kits if you want to build any of the options described above. This one can seamlessly handle all of them.
 
-``` bash
-$ quasar dev [theme]
-
-# start with 'mat' theme
-$ quasar dev
-# or
-$ quasar dev mat
-
-# start with 'ios' theme
-$ quasar dev ios
-```
-
-Create `*.vue` components from ready to use component templates folder (`/templates`):
-
-``` bash
-$ quasar new [type] <name of your component with optional subfolder>
-```
-
-Type can be `layout`, `view` (page content), `component` (generic `*.vue` component).
-You can even make your own component templates and use CLI to generate them in your App.
-
-## Quasar Play App
-If you want to **develop mobile Apps with hot reload directly on your mobile phone**, install [Quasar Play](/guide/quasar-play-app.html) app, currently only on Google Play Store.
-
-``` bash
-$ quasar dev --play
-```
-
-This generates a QR code that you can scan with Quasar Play app and you'll have your App on the phone as long as the development server is running.
-
-## Things to read about
-You should be familiar with these awesome tools/technologies:
-
-* [ES6 Javascript](http://www.2ality.com/2015/08/getting-started-es6.html)
-* [Vue Js](http://vuejs.org) and [NPM](http://npmjs.org) ecosystems
-* [Vue Router](http://router.vuejs.org/)
-* Writing [.vue files](http://vue-loader.vuejs.org/en/index.html)
-* [Optional] [Vuex](http://vuex.vuejs.org/) if building large scale Apps.
-* [Optional] [Webpack](http://webpack.github.io/) for tweaking the build system to your specific needs
-* [Optional] [Cordova](https://cordova.apache.org/) for building native mobile phone Apps out of your Quasar App
-
-> That's it. You're set now. Continue to read the guide about Quasar and don't forget to have fun :)
+Now head on to read about [Main Starter Kit](/guide/app-installation.html) and also familiarize yourself with the [Quasar CLI](/guide/quasar-cli.html).

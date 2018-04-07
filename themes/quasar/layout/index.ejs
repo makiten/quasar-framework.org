@@ -5,18 +5,40 @@
     <img src="/images/responsive-logo.png">
     <div class="q-container">
       <h1>Quasar Framework</h1>
-      <h2>SPA front-end on steroids.</h2>
+      <p style="margin-bottom: 0">( pronounced /ˈkweɪ.zɑɹ/ )</p>
+      <h2>Empowering your websites and apps</h2>
       <p>
-        Build responsive websites, hybrid mobile Apps
-        (that look native!) and Electron apps using same code, with <strong>VueJs 2</strong>.
-      </p>
-      <p>
+        Build responsive websites, PWAs, hybrid mobile Apps (that look native!) and Electron apps,
+        all simultaneously using same codebase, powered with Vue.
+        <br><br>
+        <i class="fa fa-hand-o-right"></i>
+        Demo:
+        [ <a
+          href="<%- config.root %>quasar-play/android/index.html"
+          target="_blank"
+        >
+          Material theme
+        </a>
+        ] [
+        <a
+          href="<%- config.root %>quasar-play/apple/index.html"
+          target="_blank"
+        >
+          iOS theme
+        </a>
+        ]
+        <br>
         <a
           href="https://github.com/quasarframework/quasar/releases"
           target="_blank"
         >
           <i class="fa fa-send"></i>
           Release notes (& changelog) for v<%- latest_quasar_version() %>
+        </a>
+        <br><br>
+        <a href="<%- config.root %>support-quasar-framework.html">
+          <i class="fa fa-medkit"></i>
+          Please help Quasar by supporting it.
         </a>
       </p>
       <div class="q-intro-actions">
@@ -34,7 +56,46 @@
         </a>
       </div>
     </div>
+    <br><br>
     <img class="arrow" src="/images/down.png">
+  </div>
+</div>
+
+<div class="q-feature" style="min-height: 700px">
+  <div class="q-container q-sponsors" style="text-align: center;">
+    <h2>Proudly sponsored by:</h2>
+    <a href="http://truelogic.com" target="_blank">
+      <img src="/images/logo_truelogic.png" />
+    </a>
+    <br>
+    <a href="http://campuscloudservices.com" target="_blank">
+      <img src="/images/logo_campuscloud.png" height="50px" width="250px" />
+    </a>
+    <a href="https://www.jugglestreet.com" target="_blank">
+      <img src="/images/logo_jugglestreet.png" height="50px" width="250px" />
+    </a>
+    <br><br>
+    <a href="http://comcomservices.com" target="_blank">
+      <img src="/images/logo_comcomservices.png" height="50px" width="150px" />
+    </a>
+    <a href="http://www.kalisio.com" target="_blank">
+      <img src="/images/logo_kalisio.png" height="50px" width="150px" />
+    </a>
+    <a href="http://www.kpaproductions.com" target="_blank">
+      <img src="/images/logo_kpaproductions.png" height="50px" width="180px" />
+    </a>
+    <a href="http://platformpurple.com" target="_blank">
+      <img src="/images/logo_platformpurple.png" height="50px" width="200px" />
+    </a>
+    <a href="http://www.bgasoft.com" target="_blank">
+      <img src="/images/logo_bgasoft.png" height="50px" width="200px" />
+    </a>
+    <br><br>
+    <div>
+      Partner:<br><a href="https://madewithvuejs.com/" target="_blank">
+        <img src="/images/madewithvue.svg" height="40px" width="150px" />
+      </a>
+    </div>
   </div>
 </div>
 
@@ -46,99 +107,113 @@
         All Platforms in One Go
       </h4>
       <p>
-        One source code for all platforms simultaneously: responsive desktop/mobile website,
-        native mobile Apps (that really look native!).
-      </p>
-    </div>
-    <div class="q-feature-item">
-      <i class="icon fa fa-gamepad"></i>
-      <h4>
-        Quasar Play App
-      </h4>
-      <p>
-        Develop Quasar Apps with Hot Reload directly on your phone, without even installing them.
-        <a
-          class="playstore"
-          style="margin-left: -11px;"
-          href='https://play.google.com/store/apps/details?id=com.quasarframework.quasarplay&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'
-          target="_blank"
-        ></a>
-      </p>
-    </div>
-    <div class="q-feature-item">
-      <i class="icon fa fa-thumbs-o-up"></i>
-      <h4>
-        VueJs & ES6
-      </h4>
-      <p>
-        ES6 Javascript. Leverage VueJs & NPM ecosystem easily. Support for *.vue single file components.
-      </p>
-    </div>
-
-    <div class="q-feature-item">
-      <i class="icon fa fa-hourglass-half"></i>
-      <h4>
-        Boilerplate
-      </h4>
-      <p>
-        Out of the box App code boilerplate, build system, hot reload, linter, test setup, auto minification and more.
-      </p>
-    </div>
-    <div class="q-feature-item">
-      <i class="icon fa fa-gears"></i>
-      <h4>
-        Built-in Components
-      </h4>
-      <p>
-        Endless list of components which do most of the heavy-lifting:
-        Drawer, Action Sheet, Dialog, Modal, Toast, Tabs, Toolbar,
-        Card, Lists, Toggle, Chips Textbox, Datetime, Range,
-        Rating, Knob, Collapsibles, Popovers, Pull to Refresh,
-        Infinite Scroll, Parallax, Grid, Slider, Stepper, Tree, Chat, Timeline...
-      </p>
-    </div>
-    <div class="q-feature-item">
-      <i class="icon fa fa-magic"></i>
-      <h4>
-        Themes
-      </h4>
-      <p>
-        Full-featured Quasar CSS Framework. <strong>Material Design</strong> and
-        <strong>iOS</strong> themes (for now). Write once, deploy as looking native.
+        One source code for all platforms simultaneously: responsive desktop/mobile website, PWAs (Progressive Web Apps), mobile apps (that look native) and Desktop apps (through Electron).
       </p>
     </div>
     <div class="q-feature-item">
       <i class="icon fa fa-bolt"></i>
       <h4>
-        Speed & Efficiency
+        Top Class, Fast Web Components
       </h4>
       <p>
-        Quasar focuses on low memory footprint, efficiency and making Apps run really fast.
+        There’s a component for almost every web development need out there. Each of  these components are carefully crafted to offer the best possible experience to users. Quasar is designed with performance & responsiveness in mind – so the overhead of using Quasar is barely noticeable. This is an area we take special pride in.
+      </p>
+    </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-gear"></i>
+      <h4>
+        Best practices integrated by default
+      </h4>
+      <p>
+        Quasar users are encouraged to follow web development best practices, and it comes with many embedded features to that regard out of the box. HTML/CSS/JS minification, cache busting, tree shaking, sourcemapping, code-splitting & lazy loading, ES6 transpiling, linting code, accessibility features. Quasar takes care of all these and more - no configuration needed.
+      </p>
+    </div>
+    <div class="q-feature-item">
+        <i class="icon fa fa-outdent"></i>
+        <h4>
+          Full RTL support
+        </h4>
+        <p>
+          RTL (right to left) support for both Quasar components & developer's own code. Developer-written website/app CSS code gets automatically converted to RTL if an RTL language pack is used.
+        </p>
+      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-google"></i>
+      <i class="icon fa fa-apple"></i>
+      <h4>
+        Two Themes (more to come)
+      </h4>
+      <p>
+        Quasar supports two of the most commonly used themes out of the box – Material theme and iOS theme.
+      </p>
+    </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-sign-in"></i>
+      <h4>
+        Progressively migrate your existing project
+      </h4>
+      <p>
+        Quasar offers an UMD (Unified Module Definition) version, which means developers can add a CSS and JS HTML tag into existing project and they're ready to use it. No build step is required.
+      </p>
+    </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-star"></i>
+      <h4>
+        Unparalleled developer experience through Quasar CLI
+      </h4>
+      <p>
+        * State preserving hot-reload
+        <br>* State preserving compilation error overlay
+        <br>* Lint-on-save with ESLint
+        <br>* ES6 code transpiling
+        <br>* Sourcemaps
+        <br>...many more leading-edge developer tools and techniques
+      </p>
+    </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-line-chart"></i>
+      <h4>
+        Get up to speed fast
+      </h4>
+      <p>
+        The top-class starter kit makes it easy for developers to bring an idea to reality in record time. The heavy lifting is done for the developer, not by the developer. They are free to focus on their features and let the boilerplate be done by Quasar.
+      </p>
+    </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-users"></i>
+      <h4>
+        Awesome ever-growing community
+      </h4>
+      <p>
+        When developers encounter a problem they can’t solve, they can visit the Quasar forum or Discord chat server. The community is there to help them.
       </p>
     </div>
     <div class="q-feature-item">
       <i class="icon fa fa-arrows-alt"></i>
       <h4>
-        Wide Platform Support
-      </h4>
-      <p>iOS, Android, Windows Phone, Blackberry, Google Chrome, Firefox, IE11/Edge, Safari, Opera.</p>
-    </div>
-    <div class="q-feature-item">
-      <i class="icon fa fa-refresh"></i>
-      <h4>
-        Dev Hot Reload
+        Wide platform support
       </h4>
       <p>
-        More than just Live Reload. Preserve App state while updating in the browser or phone/tablet (through Quasar Play).
+        Google Chrome, Firefox, IE11/Edge, Safari, Opera, iOS, Android, Windows Phone, Blackberry.
       </p>
     </div>
     <div class="q-feature-item">
-      <i class="icon fa fa-book"></i>
+      <i class="icon fa fa-language"></i>
       <h4>
-        Great Documentation
+        Quasar components Internationalization (i18n)
       </h4>
       <p>
-        Crystal clear documentation with examples, guides, tips and demos with source code available.
+        I18n provided by default for Quasar components.
+        If your language pack is missing it takes just 5 minutes to add it.
+      </p>
+      </div>
+    <div class="q-feature-item">
+      <i class="icon fa fa-graduation-cap"></i>
+      <h4>
+        Great documentation
+      </h4>
+      <p>
+        Finally, it’s worth mentioning the significant amount of time that is spent on writing great, bloat-free, focused, complete documentation pages so that developers can quickly pick up Quasar.
       </p>
     </div>
   </div>
@@ -151,7 +226,7 @@
       <h4>Help Build Quasar</h4>
       <p>
         Quasar is and always will be 100% free and open-source under
-        the MIT license. Fork it on GitHub and help make it bettter.
+        the MIT license. Fork it on GitHub and help make it better.
       </p>
       <a
         class="button"

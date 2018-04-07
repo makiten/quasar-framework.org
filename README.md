@@ -1,4 +1,4 @@
-![Quasar Framework logo](http://quasar-framework.org/images/quasar-logo.png)
+![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/863c14bd/dist/svg/quasar-logo-full-inline.svg)
 
 # Quasar Framework Official Website
 
@@ -18,10 +18,10 @@
 
 I'm excited if you want to contribute to Quasar under any form (report bugs, write a plugin, fix an issue, write a new feature).
 
-I'm only asking that you [read this](http://quasar-framework.org/guide/contributing.html) first.
+I'm only asking that you [read this](http://quasar-framework.org/guide/quasar-contribution-guide.html) first.
 
 ## License
 
-Copyright (c) 2016 Razvan Stoenescu
+Copyright (c) Razvan Stoenescu
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)

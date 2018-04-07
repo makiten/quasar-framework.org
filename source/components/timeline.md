@@ -1,78 +1,53 @@
-title: Timeline CSS
+title: Timeline
 ---
-Quasar supplies CSS classes for displaying a timeline. Loot at the syntax below.
+A Timeline is a display of a list of events in chronological order. It is typically a graphic design showing a long bar labelled with dates alongside itself and usually events. Timelines can use any time scale, depending on the subject and data.
 
-<input type="hidden" data-fullpage-demo="css/timeline">
+QTimelines have 3 media breakpoints. View on a desktop and click the "View Desktop" link on the right side, then resize the browser window to see the media breakpoints in action.
+<input type="hidden" data-fullpage-demo="other-components/timeline">
+
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: [
+    'QTimeline',
+    'QTimelineEntry'
+  ]
+}
+```
 
 ## Basic Usage
+```html
+<q-timeline color="secondary">
+  <q-timeline-entry heading>
+    Timeline Subject
+  </q-timeline-entry>
 
-``` html
-<div class="timeline">
-  <!-- label -->
-  <div class="timeline-label">
-    <h4 class="bg-white text-italic">
-      Friday
-    </h4>
-  </div>
-
-  <!-- item -->
-  <div class="timeline-item">
-    <div class="timeline-badge">
-      <!-- badge with avatar -->
-      <img src="/demo-app/assets/linux-avatar.png">
-
-      <!-- ...or badge with icon -->
-      <i>alarm</i>
+  <q-timeline-entry
+    title="Event Title"
+    subtitle="February 22, 1986"
+    side="left"
+  >
+    <div>
+      Lorem ipsum dolor sit amet.
     </div>
-
-    <!-- title -->
-    <div class="timeline-title">
-      Trip to mountains
-    </div>
-
-    <!-- date timestamp -->
-    <div class="timeline-date text-italic">
-      <div>17:01</div>
-      <div>June 16th, 2016</div>
-    </div>
-
-    <!--
-      content; any Web component or DOM elements,
-      in this particular case, a Card
-    -->
-    <div class="card">
-      <div class="card-title">
-        Card Title
-      </div>
-      <div class="card-content">
-        Lorem ipsum dolor sit amet...
-      </div>
-    </div>
-  </div>
-</div>
+  </q-timeline-entry>
+</q-timeline>
 ```
 
-## Positioning
-On wide-enough windows, Timelines display items on the left-side and right-side, alternating the position. To override the default position, use `on-left` or `on-right` CSS classes:
+## QTimeline (Parent) Vue Properties
+| Vue Property | Type    | Description                            |
+| ---          | ---     | ---                                    |
+| `color` | String  | Color of the text |
+| `dark` | Boolean | When rendering on a dark background. |
 
-``` html
-<div class="timeline">
-  <!-- item on left-side regardless of default position -->
-  <div class="timeline-item on-left">
-    ...
-  </div>
-
-  <!-- item on right-side regardless of default position -->
-  <div class="timeline-item on-right">
-    ...
-  </div>
-</div>
-```
-
-## Coloring
-For overriding the default colors used on a Timeline, use [Quasar CSS color classes](/api/css-color-palette.html) like `red`, `primary`, `teal`:
-``` html
-<div class="timeline red">
-  ...
-</div>
-```
+## QTimelineEntry (Child) Vue Properties
+| Vue Property | Type    | Description |
+| ---          | ---     | ---         |
+| `heading` | Boolean | Display a timeline subject which helps group timeline entries into separate chunks. |
+| `tag` | String | HTML tag to use to render the timeline entry DOM element. |
+| `side` | Boolean | On wider windows, you can choose on which side to display this entry. Default is on the right side. |
+| `icon` | String | Icon to use. |
+| `color` | String | Color to use for this entry. |
+| `title` | String | Title of the entry. |
+| `subtitle` | String | Addition to title of the entry. |
