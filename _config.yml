@@ -81,15 +81,27 @@ theme: quasar
 # Accounts
 github: https://github.com/quasarframework/quasar
 twitter: https://twitter.com/quasarframework
-gitter: https://gitter.im/quasarframework/Lobby
+discord: https://discord.gg/5TDhbDg
 forum: http://forum.quasar-framework.org
 google_analytics: UA-6317975-4
 
 # Deployment
 deploy:
   type: git
-  repo: git@github.com:quasarframework/quasar.git
-  branch: gh-pages
+  repo: git@github.com:quasarframework/dist-quasar-framework.org.git
+  branch: master
 
 sitemap:
   path: sitemap.xml
+
+jsonContent:
+  meta: false
+  keywords: true
+  pages:
+    title: true
+    slug: true
+    updated: true
+    link: true
+    permalink: true
+    text: true
+  posts: false

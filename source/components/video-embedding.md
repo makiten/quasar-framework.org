@@ -1,19 +1,27 @@
 title: Video Embedding
 ---
 Embedding a video like Youtube is easy. It also resizes to fit the container by default.
+<input type="hidden" data-fullpage-demo="media/video">
 
-<input type="hidden" data-fullpage-demo="web-components/video-embedding">
-
-``` html
-<q-video
-  :src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
-  style="width: 853px; height: 480px"
-></q-video>
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QVideo']
+}
 ```
 
-Or, if you prefer the "raw" version:
+## Using QVideo
 ``` html
-<div class="video">
+<q-video
+  src="https://www.youtube.com/embed/k3_tw44QsZQ?rel=0"
+  style="width: 853px; height: 480px"
+/>
+```
+
+Or, if you prefer the "raw" version for more control:
+``` html
+<div class="q-video">
   <iframe
     width="853"
     height="480"

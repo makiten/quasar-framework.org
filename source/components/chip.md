@@ -1,34 +1,43 @@
 title: Chip
 ---
 
-The Quasar Chip component is basically a simple UI block entity, which represents more advanced underlying data. Quasar chips can also be used as labels too.
+The Chip component is basically a simple UI block entity, representing for example more advanced underlying data, such as a contact, in a compact way.
 
-The chip component has a number of features, like the ability to be closed or removed and the ability to add an image or an icon. 
+Chips can contain entities such as an avatar, text or an icon, optionally having a pointer too. They can also be closed or removed if configured so.
+<input type="hidden" data-fullpage-demo="other-components/chip">
 
-A good example of using chips is to show "contact" chips in the `To:` area of an email form, with a picture of the user and their name, instead of just the text of an email address. 
-
-<!-- Todo! Usually touching or clicking on (or hovering over) a chip will show the full details behind the data the chip represents. For instance, if the chip is showing a contact, then the full details or a list of partial details could be shown to the user for information or selection. This kind of feature, however, is left up to userland to create, as there are many, many possibilities. Chips can be used for any abbreviated visual representation of any kind of data. --> 
-
-<input type="hidden" data-fullpage-demo="components/chip">
+## Installation
+Edit `/quasar.conf.js`:
+```js
+framework: {
+  components: ['QChip']
+}
+```
 
 ## Basic Usage
 
-Below is a simple chip with an icon. Notice you can `slot` the icon to the left.
+Some basic examples:
 
 ``` html
-<q-chip class="bg-primary text-white">
-  <q-icon name="alarm" slot="left" />
+<!-- icon on left side -->
+<q-chip icon="alarm" color="primary">
   q-chip
 </q-chip>
-```
 
-If you'd like the icon on the right, you can use CSS to do this.
-
-``` html
-<q-chip class="bg-tertiary text-white">
-  10
-  <q-icon class="on-right" name="mail" />
+<!-- icon on right side -->
+<q-chip icon-right="alarm" color="primary">
+  q-chip
 </q-chip>
+
+<!-- avatar on left side -->
+<q-chip avatar="/statics/some.png" color="primary">
+  q-chip
+</q-chip>
+
+<!-- floating chip applied to a button (v0.15.7+) -->
+<q-btn round dense color="dark" icon="announcement">
+  <q-chip floating color="red">1</q-chip>
+</q-btn>
 ```
 
 ## Vue Properties
@@ -36,53 +45,86 @@ There are a number of properties available:
 
 | Vue Property | Type | Description |
 | --- | --- | --- |
-|`small` | Boolean | Reduces the size of the chip. |
-|`tag` | Boolean |  |
-|`outline` | Boolean | Creates a chip with only an outlined edge. |
-|`square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
-|`floating` | Boolean | Allows the chip to float over other elements. |
-|`pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `up`.  |
-|`closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will remove the chip. |
-|`detail` | Boolean | Highlights the area of the icon, should there be one. |
+| `floating` | Boolean | Allows the chip to float over other elements on top-right side of them. |
+| `tag` | Boolean | Makes it a "tag" type. |
+| `detail` | Boolean | Highlights the area on the right (icon or avatar), should there be one. |
+| `icon` | String | Icon for left side. |
+| `icon-right` | String | Icon for right side. |
+| `avatar` | String | URL pointing to statics folder for an image which gets placed on left side. |
+| `small` | Boolean | Reduces the size of the chip. Makes it compact. Use this or "dense", but not both. |
+| `dense` | Boolean | (Quasar v0.15.7+) Makes chip small, with minimum padding. Use this or "small", but not both. |
+| `square` | Boolean | Gives the chip right-angled corners. Rounded corners are default. |
+| `pointing` | String | Adds a carat to the chip, pointing either `up`, `right`, `down` or `left`.  |
+| `color` | String | The color the chip should be. |
+| `text-color` | String | Override the text color of the chip. |
+| `closable` | Boolean | Adds a close button to the right of the chip, which when clicked, will emit `@close` event. |
 
-## More Uses
+## Vue Events
+| Vue Property | Description |
+| --- | --- |
+| `@hide` | The close button has been clicked/tapped. |
+| `@focus` | The chip has been focused. |
+| `@click` | Chip has been clicked/tapped outside of close button. |
 
-You can add the ability to close the chip too.
+When using `closable` property a close button will be displayed on the right side. When clicking/tapping on the button the `@hide` event will be triggered. This does not removes the chip by itself. You will have to handle it yourself.
 
+The two events fire independently but not both simultaneously, depending on where the user has clicked/tapped (on close button or anywhere else within the Chip).
+
+## More Examples
+
+You can add the ability to hide the chip too.
 ``` html
-<q-chip 
- closable
- class="bg-red text-white"
- >
-  <img slot="left" src="~assets/boy-avatar.png">Joe
+<q-chip closable color="red">
+  Joe
 </q-chip>
 ```
-You can also use a chip to label a button.
 
+You can also use a chip to label a button.
 ```html
-<q-btn class="light relative-position">
-  Inbox
-  <q-chip label floating  class="bg-primary text-white">22</q-chip>
+<q-btn color="light" label="Inbox">
+  <q-chip floating color="primary">22</q-chip>
 </q-btn>
 ```
 
+Or to label anything you want, as long as the container has `position: relative` (hint: use `relative-position` Quasar CSS helper class):
+```html
+<div class="relative-position">
+  ....content...
+  <q-chip floating color="primary">22</q-chip>
+</div>
+```
+
 You can also use chips as pointing labels.
-
 ```html
-
-  <q-chip pointing="up" class="pointing-up bg-primary text-white">Pointing Up</q-chip>
-
+<q-chip pointing="up" color="primary">
+  Pointing Up
+</q-chip>
 ```
 
-## CSS
-
-Much like [the button component](/components/buttons.html), you can add [Quasar Colors](/api/css-color-palette.html) and other styling to chips too. Below is an example of a chip, but with shadowing.
-
+You can create advanced label chips, with an avatar/image and a closeable button to delete the chip.
 ```html
-<q-chip square class="bg-secondary text-white shadow-1">10k</q-chip>
+<q-chip closable avatar="statics/some.png" color="red">
+  Joe
+</q-chip>
 ```
 
-For more on styling elements, please refer to [the JavaScript and CSS API section](/api).  
+You can also create chips that look like tags.
 
+```html
+<q-chip tag color="secondary" icon-right="mail">
+  New
+</q-chip>
+```
 
- 
+This chip highlights the icon by using the `detail` property.
+
+```html
+<q-chip tag color="secondary" detail icon="mail">
+  10 emails
+</q-chip>
+```
+
+One more example where we add a shadow to a chip:
+```html
+<q-chip class="shadow-1" square color="primary">10k</q-chip>
+```
